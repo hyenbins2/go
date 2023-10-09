@@ -8,34 +8,40 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
-	rand.Intn(Time.Now) + 1
+	rand.Seed(time.Now().UnixNano()) // 시드 설정
+
 	answer := rand.Intn(100) + 1 // 1 ~ 100
 
-	fmt.Println("Guess number (1  ~ 100) : ")
-	fmt.Println(answer)
+	fmt.Println("Guess number (1 ~ 100) : ")
+	// fmt.Println(answer) // 디버깅용으로 정답 숫자 출력
 
 	reader := bufio.NewReader(os.Stdin)
 
-	for i := 0; 1 < 10; i++ {
-		fmt.Println("You chance :", 10-i)
+	for i := 0; i < 10; i++ { // 루프 조건 수정
+		fmt.Println("Your chance :", 10-i)
 		fmt.Println("Guess number: ")
-		inputNumber, err := reader.ReadString('\n')
+		inputNumberString, err := reader.ReadString('\n')
 		if err != nil {
 			log.Fatal(err)
 		}
-		inputNumberString := strings.TrimSpace(inputNumberString)
-		inputNumber, err := strconv.Atoi(inputNumberString)
+		inputNumberString = strings.TrimSpace(inputNumberString) // 입력 문자열 공백 제거
+		inputNumber, err := strconv.Atoi(inputNumberString)      // 문자열을 정수로 변환
 
 		if err != nil {
 			log.Fatal(err)
 		}
 		if inputNumber < answer {
-			fmt.Println("Ur guess number is lower than answer.")
+			fmt.Println("Your guess number is lower than the answer.")
 		} else if inputNumber > answer {
-			fmt.Println("Ur guess number is higther than answer.")
+			fmt.Println("Your guess number is higher than the answer.")
+		} else {
+			fmt.Println("Congratulations! You guessed the correct number.")
+			break // 정답을 맞췄으므로 루프 종료
 		}
 	}
+	fmt.Println("The correct answer was:", answer)
 }
