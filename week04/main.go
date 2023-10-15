@@ -14,7 +14,7 @@ func main() {
 	var e float32 = 3.14
 	var f string
 	var g bool
-	h7 := 'Z'
+	h7 := 'Z' //rune, 유니코드 출력 int32
 	i := "문자열"
 	J := "변수명이 대문자로 시작하면 다른 패키지에서 이 변수를 사용할 수 있음"
 	//koreanzombie := "정찬성"
@@ -39,10 +39,10 @@ func main() {
 	fmt.Println(reflect.TypeOf("Go!"))
 	// fmt.Println(math.Floor("inha"))
 	// fmt.Println(strings.Title(3.14))
-	fmt.Println('A')       // rune (unicode)
-	fmt.Println('김', '\n') // rune (unicode)
-	fmt.Println(math.Floor(2.15))
-	fmt.Println(math.Ceil(2.15))
+	fmt.Println('A')              // rune (unicode)
+	fmt.Println('김', '\n')        // rune (unicode)
+	fmt.Println(math.Floor(2.15)) // 내림 함수
+	fmt.Println(math.Ceil(2.15))  // 올림 함수
 	fmt.Println(strings.Title("오픈소스\t프로그래밍~\n\"Go\""))
-	fmt.Println(strings.Title("open source programming go!"))
+	fmt.Println(strings.Title("open source programming go!")) //단어 첫글자 대문자 출력
 }
