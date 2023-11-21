@@ -8,11 +8,11 @@ import (
 )
 
 func main() {
-	var a int = 9
+	var a int = 9 //변수 선언 : var 변수명 자료형
 	var b = 2.7
-	var c, d string
+	var c, d string //동시에 여러개 가능
 	var e float32 = 3.14
-	var f string
+	var f string //값 없으면 zero value
 	var g bool
 	h7 := 'Z' //rune, 유니코드 출력 int32
 	i := "문자열"
@@ -20,11 +20,11 @@ func main() {
 	//koreanzombie := "정찬성"
 	koreanZombie := "정찬성" // Go 커뮤니티에서 제안하는 변수 표기법. Camel
 
-	fmt.Println(float64(a) > b)
-	fmt.Println(a * int(b))
+	fmt.Println(float64(a) > b) //int타입 a --> float타입으로 변환
+	fmt.Println(a * int(b))     //float타입 b --> int타입으로 변환
 
 	//b = 2.7
-	c = "inha~"
+	c = "inha~" // 업데이트
 	//a = 9
 	d = "Go..."
 	fmt.Println(a, b, c, d, e, f, g, h7, i, J, koreanZombie) // f, g는 zero value 출력
