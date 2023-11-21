@@ -11,7 +11,7 @@ func main() {
 	month := now.Month()
 
 	fmt.Println(year, month)
-	//fmt.Println(now.Month())
-	//fmt.Println(now.Hour(), now.Minute(), now.Second())
+	fmt.Println(now.Month())
+	fmt.Println(now.Hour(), now.Minute(), now.Second())
 
 }
