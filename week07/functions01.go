@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func isPrime(n int) (bool, error) {
+func isPrime(n int) (bool, error) { // 매개변수 int타입 n, return반환값 bool, error
 	prime := true
 
 	if n < 2 {
